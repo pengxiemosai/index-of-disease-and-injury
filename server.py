@@ -17,6 +17,7 @@ async def get_icd10(diagnosis: str) -> [str]:
     if not data or "results" not in data:
         return "No results found."
 
+    print("retrieving response from NIH")
     alerts = []
     for item in data["results"]:
         code = item.get("code", "Unknown")
